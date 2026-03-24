@@ -1,0 +1,36 @@
+{
+    "dev": {
+        "django_settings": "sastreria_project.settings",
+        "project_name": "sastreria-backend",
+        "runtime": "python3.12",
+        "s3_bucket": "zappa-sastreria-deploy-storage",
+        "aws_region": "us-east-1",
+        "context_header_mappings": {
+            "Host": "X-Forwarded-Host"
+        },
+        "exclude": [
+            "*.exe",
+            "*.pyc",
+            "venv/*",
+            ".git/*",
+            "staticfiles/*",
+            "media/*",
+            ".env",
+            "db.sqlite3"
+        ],
+        "environment_variables": {
+            "DEBUG": "False",
+            "USE_S3": "True",
+            "DB_NAME": "sastreria_db",
+            "DB_USER": "postgres",
+            "DB_PASSWORD": "damiansastreria",
+            "DB_HOST": "sastreria-db.cmxsck4o6bbq.us-east-1.rds.amazonaws.com",
+            "DB_PORT": "5432",
+            "AWS_STORAGE_BUCKET_NAME": "sastreria-static-media-mapache",
+            "SECRET_KEY": "sastreria_mapache_aws_8xPz9wQvMtY2k5cJ"
+        },
+        "slim_handler": false,
+        "memory_size": 512,
+        "timeout_seconds": 30
+    }
+}
