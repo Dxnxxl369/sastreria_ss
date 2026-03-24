@@ -8,7 +8,7 @@ frontend:
     build:
       commands:
         - cd web
-        - npm run build
+        - CI=false npm run build
   artifacts:
     baseDirectory: web/build
     files:
